@@ -13,6 +13,15 @@ const initValue = {
 export const Github = () => {
   const [state, dispatch] = useReducer(githubReducer, initValue);
   const [text, setText] = useState("");
+
+  if(state.isLoading){
+    return <h1>Loading Data</h1>
+   } 
+
+  if(state.isError){
+    return <h1>Error </h1>
+  }
+ 
   return (
     <div>
       <div>
